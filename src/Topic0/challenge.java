@@ -27,7 +27,6 @@ public class challenge {
     public void guardarProcesoSistemaMemoria(){
         generador++;
         int id = generador;
-        System.out.println(id);
         int count = 0;
         for (int i = 199; i > 0 ; i-- ) {
           if (memoria[i]=="**** " && count < numero1){
@@ -40,7 +39,6 @@ public class challenge {
     public void guardarProcesoAplicacionMemoria(){
         generador2++;
         int id= generador2;
-        System.out.println(id);
         int count = 0;
         for (int i = 199; i > 0 ; i--) {
             if (memoria[i]=="**** " && count < numero1){
@@ -50,7 +48,19 @@ public class challenge {
         }
 
     }
-    public void eliminarProceso(){
+    public void eliminarProcesoSistema(int id){
+        for (int i = 199; i > 0 ; i--) {
+            if (memoria[i].equals("s00"+ id + " ")){
+                memoria[i]="**** ";
+            }
 
+        }
+    }
+    public void eliminarProcesoAplicacion(int id){
+        for (int i = 199; i > 0 ; i--) {
+            if (memoria[i].equals("a00"+ id + " ")){
+                memoria[i]="**** ";
+            }
+        }
     }
 }

@@ -3,6 +3,8 @@ package Topic0;
 public class challenge {
     String memoria [] = new String[200];
     int numero1;
+    static int generador = 0;
+    static int generador2 = 0;
     public void llenarMemoria() {
         for (int i = 0; i < 200; i++) {
             memoria[i]="**** ";
@@ -23,22 +25,32 @@ public class challenge {
         return numero1 = (int) (Math.random()*(20-10))+10;
     }
     public void guardarProcesoSistemaMemoria(){
+        generador++;
+        int id = generador;
+        System.out.println(id);
         int count = 0;
-        for (int i = 0; i < 200 ; i++) {
+        for (int i = 199; i > 0 ; i-- ) {
           if (memoria[i]=="**** " && count < numero1){
-              memoria[i]= "s001 ";
+              memoria[i]= "s00" + generador +" ";
               count++;
           }
         }
+
     }
     public void guardarProcesoAplicacionMemoria(){
+        generador2++;
+        int id= generador2;
+        System.out.println(id);
         int count = 0;
-        for (int i = 0; i < 200 ; i++) {
+        for (int i = 199; i > 0 ; i--) {
             if (memoria[i]=="**** " && count < numero1){
-                memoria[i]= "a001 ";
+                memoria[i]= "a00" + generador2 + " ";
                 count++;
             }
         }
-    }
 
+    }
+    public void eliminarProceso(){
+
+    }
 }

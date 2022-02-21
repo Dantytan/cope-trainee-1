@@ -43,8 +43,9 @@ public class test {
                     break;
                 default:if(eleccionProceso==5)
                     start=false;
-                    System.out.println(" ");
+
             }
+            System.out.println(" ");
         }while (start==true);
 
     }
